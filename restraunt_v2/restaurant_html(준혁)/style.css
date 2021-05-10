@@ -6,11 +6,12 @@ a{
 }
 ul{
   list-style-type: none;
+  padding-left: 0;
 }
 
 .slider{
-    width: 640px;
-    height: 480px;
+    width: 900px;
+    height: 410px;
     position: relative;
     margin: 0 auto;
     overflow: hidden;
@@ -88,7 +89,9 @@ ul.imgs li{
   display: grid;
   grid-template-columns: 20% 1fr;
   grid-template-rows: 100px 1fr 100px;
-  height: 100%;
+  height: 600px;
+  width: 1200px;
+  margin-right: 10px;
   grid-gap:20px;
   border: 1px solid black;
   grid-template-areas: 
@@ -99,23 +102,38 @@ ul.imgs li{
 }
 .header{
   grid-area: header;
+  width: 1200px;
 }
 
 .menu{
   grid-area: menu;
-  
+  height: 410px;  
 }
+
 .content{
   grid-area: content;
   border:1px solid black;
+  width: 900px;
+  height: 410px;
 }
 .footer{
   grid-area: footer;
+  height: 50px;
+  position: relative;
+}
+.login{
+  position: absolute;
+  right:0px;;
 }
 .menu>ul{
   line-height: 50px;
+  text-align: center;
 }
-.footer>ul{display:flex; position:absolute; right:30px; width: 170px;}
+
+.menu>ul>li:hover{
+  background-color: rgba(0, 0, 0, 0.089);
+}
+.footer>ul{display:flex; right:30px; width: 170px;}
 .footer>ul>li{flex: 1;}
 
 form>fieldset{
@@ -131,6 +149,15 @@ form>fieldset{
 }
 .event_page{
   display: flex;
+  width: 900px;
+  height: 410px;
+  position: relative;
+}
+
+.next_page{
+  position: absolute;
+  left:410px;
+  bottom: 75px;
 }
 .event_item_title{
   font-size: 1.5rem;
@@ -149,6 +176,8 @@ form>fieldset{
 
 .contact_page{
   display: flex;
+  width: 900px;
+  height: 410px;
 }
 .info{
   margin: 40px;
@@ -163,4 +192,6 @@ a:hover {color:white;} /* 링크 마우스 오버 : 빨강*/
 a:active {color:white;} /* 링크 마우스 클릭 :검정*/
 
 header{padding: px;}
+
+
 
