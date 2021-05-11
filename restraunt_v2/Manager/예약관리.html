@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Reservation System-Reserve Manage</title>
+    <meta name="viewport" content="width=device-width">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+
+    <!-- <style>
+      /* #Ldate, #Ltable, #Lreserve{
+        margin-left: 40px;
+        size: 30px;
+      }
+      #selectDate{
+        margin-top: -10px;
+      }
+      #selectDate{
+        margin-left: 451px;
+      }
+      #selectTable{
+        margin-left: 520px;
+      }
+      #reservNum{
+        margin-left: 385px;
+      } */
+
+    </style> -->
+  </head>
+  <body>
+    <form action="http://localhost/reservation.php">
+    <div class="container" id="ReserveContainer">
+      <div class="header">
+        <h1 style="padding-left:20px;">
+        <a href="관리자 main 메뉴.html" style="">Manager Mode</a><h1>
+      </div>
+      <div class="managermenu">
+         <ul>
+          <li><a href="예약관리.html">Reservation</a></li>
+          <li><a href="회원관리.html">Customer Info</a></li>
+          <li><a href="통계.html">Statistic</a></li>
+          <li><a href=""></a></li>
+        </ul>
+      </div>
+      <div class="Content" id="ReserveContent1">
+        <!-- 날짜 -->
+        <p>
+          <div id="DateLabel">
+            <label for="selectDate" id="Ldate">날짜</label>
+          </div>
+          <div id="SelectDate">
+            <input type="date" name="날짜" id="selectDate">
+          </div>
+        </p>
+        <!-- 테이블 선택 콤보박스 -->
+        <div id="TableLabel">
+          <label for="selectTable" id="Ltable">테이블</label>
+        </div>
+        <div id="SelectTable">
+          <select name="테이블" id="selectTable">
+            <option value="" selected hidden disabled>선택</option>
+            <option value="1번">1번</option>
+            <option value="2번">2번</option>
+            <option value="3번">3번</option>
+            <option value="4번">4번</option>
+            <option value="5번">5번</option>
+          </select>
+        </div>
+        <!-- //예약번호 입력 -->
+        <p>
+          <div id="ReserveLabel">
+            <label for="reserveNum" id="Lreserve">예약번호</label>
+          </div>
+          <div id="ReserveNum">
+            <input type="text" name="예약번호" id="reserveNum">
+          </div>
+        </p>
+        <!-- 조회 -->
+        <div id="RButton">
+          <button id="btn">조회</button>
+        </div>
+        <div id="ResetButton">
+          <button type="reset" id="resetButton">초기화</button>
+        </div>
+      </div>
+      </form>
+      <div class="Content" id="ReserveContent2">
+        <!-- 출력되는 표 -->
+        <table id="reserveTable">
+          <tr>
+            <th width="90">예약번호</th> <th width="90">날짜</th> <th width="70">예약자명</th> <th width="90">테이블 No.</th> <th width="110">전화번호</th> <th width="70">동행인원</th>
+          </tr>
+          <tr height="65">
+            <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+          </tr>
+          <tr height="65">
+            <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+          </tr>
+          <tr height="65">
+            <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+          </tr>
+          <tr height="65">
+            <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+          </tr>
+          <tr height="65">
+            <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+          </tr>
+        </table>
+      </div>
+      <div class="footer">
+        <ul>
+          <li><a href="#a">LOGOUT</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
