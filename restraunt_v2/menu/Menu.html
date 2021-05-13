@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Menu</title>
+<style>
+body {
+   margin:0;
+   position: relative;
+   background: url(캡처.jpg) no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   z-index:1;
+}
+.left {
+   padding-left:3%;
+   position: relative;
+   float:left;
+   width:18%;
+   height: 100vh;
+   background-color:#000000;
+   color:white;
+   font-size:44px;
+   opacity: 0.5;
+   z-index:2;
+}
+.center{
+   position:relative;
+   float: right;
+   width:70%;
+   height: auto;
+   margin-top:5%;
+   right:5%;
+   color:white;
+   background-color: #000000;
+   background-color: rgba(0,0,0,0.5);
+   z-index:2;
+}
+.food{
+	margin-left:4%;
+	margin-top:4%;
+	margin-right:10px;
+	float:  left;
+	position: relative;
+	z-index:4;
+}
+.food1{
+	margin-left:4%;
+	margin-top:4%;
+	margin-right:10%;
+	float:  right;
+	position: relative;
+	z-index:4;
+}
+.food2{
+	margin-left:4%;
+	margin-top:4%;
+	margin-right:10px;
+	float:  left;
+	position: relative;
+	z-index:4;
+}
+.food3{
+	margin-left:4%;
+	margin-top:4%;
+	margin-right:10%;
+	float:  right;
+	position: relative;
+	z-index:4;
+}
+.bottom{
+   position: fixed;
+   bottom:0;
+   background-color: #000000;
+   color:grey;
+   width:100%;
+   height:50px;
+   z-index:4;
+}
+</style>
+</head>
+<body>
+   <div class="left">
+   <br><br>Restaurant<br><br>
+   <br>Reservation<br>
+   <br>Event<br>
+   <br>Contact
+   </div>
+   <div class="center"> 
+   		<div class="food">
+   			<img src="음식사진.PNG" width="210" height="210" />
+   			<p style="float:right; text-overflow:clip; width:180px"><br>&emsp;TOOWOMBA STEAK &emsp;PASTA<br><br><br>
+   			&emsp;Price : 27,900W<br><br>
+   			&emsp;Rate : 4.5
+   			</p>
+   		</div>
+   		<div class="food1">
+   			<img src="음식사진1.jpg" width="210" height="210" />
+   			<p style="float:right; text-overflow:clip;width:180px"><br>&emsp;JIMBOOMBA STEAK<br><br><br>
+   			&emsp;Price : 35,900W<br><br>
+   			&emsp;Rate : 4.3
+   			</p>
+   		</div>
+   		<div class="food2">
+   			<img src="음식사진2.jpg" width="210" height="210" />
+   			<p style="float:right; text-overflow:clip; width:180px"><br>&emsp;AGLIO EOLIO<br><br><br>
+   			&emsp;Price : 18,900W<br><br>
+   			&emsp;Rate : 4.2
+   			</p>
+   		</div>
+   		<div class="food3">
+   			<img src="음식사진3.jpg" width="210" height="210" />
+   			<p style="float:right; text-overflow:clip;width:180px"><br>&emsp;무슨 스테이크<br><br><br>
+   			&emsp;Price : 48,900W<br><br>
+   			&emsp;Rate : 4.1
+   			</p>
+   		</div>
+   		<div style="position:absolute;display:inline-block; margin:0 auto; bottom:0">
+   		<input type="button" value="<prev">
+   		<input type="button" value="next>">
+   		</div>
+   </div>
+  
+    <div class="bottom">
+   <p style="margin-left:10px; margin-bottom:5px;"> Kyonggi@kyonggi.ac.kr Suwon</p>
+   </div>
+</body>
+</html>
