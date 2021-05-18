@@ -2,57 +2,56 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <title>로그인</title>
     <meta name="viewport" content="width=device-width">
-    <title>Resertvation System</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <link href="login.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
     <div class="container">
       <div class="header">
         <h1 style="padding-left:20px;">
-          <a href="index.html" style="">Resturant</a><h1>
+        <a href="index.html"style="">Resturant</a><h1>
       </div>
       <div class="menu">
-         <ul>
+        <ul>
           <li><a href="menu.html">MENU</a></li>
           <li><a href="reservation.html">RESERVATION</a></li>
           <li><a href="event.html">EVENT</a></li>
           <li><a href="contact.html">CONTACT</a></li>
         </ul>
       </div>
-      <div class="contact_page">
-        <div class="info">
-          to contact us by phone,<br>
-          please call 031-0000-1111<br>
-          <br>
-           <br>
+      <div class="content" id="login">
+        <div id="LOGIN">
+          <h1 id="Lh1">LOGIN</h1>
+        </div>
+        <!-- <div id="IDPWD"> -->
+          <div id="ID">
+            <input type="text" id="id" value="아이디">
+          </div>
+          <div id="PWD">
+            <input type="password" id="pwd" value="password">
+          </div>
+          <div id="LOGINBUTTON">
+            <button id="Loginbtn">로그인</button>
+          </div>
+        <!-- </div> -->
+
+        <div id="JOIN">
+          <a href="회원가입.html" value="회원가입" id="jion">회원가입</a>
+        </div>
+        <div id="SOCIALLOGIN">
           <a href="https://www.facebook.com/" target="_blank"><img src="https://cdn.pixabay.com/photo/2017/06/22/06/22/facebook-2429746__340.png" alt="위의 이미지를 누르면 연결됩니다." width=40 height=40></a>
-          <br>
           <a href="https://instagram.com" target="_blank"><img src="https://cdn.pixabay.com/photo/2016/09/17/07/03/instagram-1675670__340.png" alt="위의 이미지를 누르면 연결됩니다." width=40 height=40></a>
-          <br>
           <a href="https://twitter.com" target="_blank"><img src="https://cdn.pixabay.com/photo/2014/04/03/11/53/twitter-312464__340.png" alt="위의 이미지를 누르면 연결됩니다." width=40 height=40></a>
         </div>
-
-        <div class="map">
-          <div id="daumRoughmapContainer1620312837233" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-          <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-          <script charset="UTF-8">
-          new daum.roughmap.Lander({
-            "timestamp" : "1620312837233",
-            "key" : "25nwv",
-            "mapWidth" : "640",
-            "mapHeight" : "360"
-            }).render();
-            </script>
-            </div>
       </div>
       <div class="footer">
-        <ul class="login">
-          <li><a href="로그인.html">LOGIN</a></li>
+        <!-- <ul>
+          <li><a href="#a">LOGIN</a></li>
           <li><a href="a#">SIGN</a></li>
-        </ul>
-
+        </ul> -->
       </div>
-
+    </div>
   </body>
 </html>
