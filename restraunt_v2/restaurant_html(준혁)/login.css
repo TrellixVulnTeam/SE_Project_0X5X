@@ -186,23 +186,6 @@ form>fieldset{
 }
 
 
-@media (min-width:1300px) {
-  .container{
-    display: grid;
-    grid-template-columns: 20% 1fr;
-    grid-template-rows: 100px 1fr 100px;
-    height: 100%;
-    width: 100%;
-    margin-right: 10px;
-    grid-gap:20px;
-    border: 1px solid black;
-    grid-template-areas:
-    "header header"
-    "menu content"
-    "footer footer"
-  }
-}
-
 
 
 a:link {color: black;} /* 링크 방문전 : 오렌지*/
@@ -211,3 +194,71 @@ a:hover {color:white;} /* 링크 마우스 오버 : 빨강*/
 a:active {color:white;} /* 링크 마우스 클릭 :검정*/
 
 header{padding: px;}
+
+
+#login{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 25px 25px 30px auto;
+  height: 100%;
+  grid-gap:10px;
+  grid-area: content;
+  text-align: center;
+  grid-template-areas:
+  "LOGIN"
+  "IDPWD"
+  "JOIN"
+  "SOCIALLOGIN"
+}
+/* .content>#IDPWD{
+  display: grid;
+  grid-template-columns: 800px auto;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+  "ID LOGINBUTTON"
+  "PWD LOGINBUTTON"
+} */
+
+#DateLabel, #SelectDate, #TableLabel, #SelectTable, #ReserveLabel, #ReserveNum{
+  margin-top: 20px;
+}
+#RButton, #ResetButton{
+  text-align: left;
+  margin-left: 50px;
+}
+#btn{
+    text-decoration : none;
+    font-size:20px;
+    color:white;
+    padding:5px 20px 5px 20px;
+    /* margin-top: -20px;
+    margin-left: 298px; */
+    display:inline-block;
+    border-radius:5px;
+    text-shadow:0px -1px black;
+
+    background-color:#2980B9;
+}
+#resetButton{
+  text-decoration : none;
+  font-size:20px;
+  color:white;
+  padding:5px 10px 5px 10px;
+  /* margin-top: -20px;
+  margin-left: 298px; */
+  display:inline-block;
+  border-radius:5px;
+  text-shadow:0px -1px black;
+
+  background-color:#CF3F37;
+}
+#Loginbtn{
+  text-decoration : none;
+  font-size:20px;
+  color:white;
+  padding:2px 10px 2px 10px;
+  display:inline-block;
+  border-radius:5px;
+  text-shadow:0px -1px black;
+  background-color:#2980B9;
+}
