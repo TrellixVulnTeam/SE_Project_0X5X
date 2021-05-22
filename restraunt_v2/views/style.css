@@ -10,7 +10,7 @@ ul{
 }
 
 body{
-  background-image: url(background4.jpg);
+  background-image: url(../res/background.jpg);
   background-repeat: no-repeat;
 }
 .slider{
