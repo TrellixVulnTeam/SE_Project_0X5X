@@ -1,0 +1,24 @@
+{
+  "name": "restraunt",
+  "version": "0.0.1",
+  "description": "restraunt management system",
+  "main": "restraunt.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "author": "SE",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "g": "^2.0.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
+    "nunjucks": "^3.2.3",
+    "sequelize": "^6.6.2",
+    "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "keywords": []
+}

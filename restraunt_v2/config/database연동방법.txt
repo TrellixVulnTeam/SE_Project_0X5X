@@ -1,0 +1,4 @@
+develoment
+
+username => your database ID
+password => your database PWD
