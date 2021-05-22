@@ -9,6 +9,11 @@ ul{
   padding-left: 0;
 }
 
+body{
+  background-image: url(background4.jpg);
+  background-repeat: no-repeat;
+}
+
 .slider{
     width: 900px;
     height: 410px;
@@ -100,6 +105,23 @@ ul.imgs li{
   "footer footer"
 
 }
+@media (min-width:1300px) {
+  .container{
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    height: 100%;
+    width: 100%;
+    margin-right: 10px;
+    grid-gap:20px;
+    border: 1px solid black;
+    grid-template-areas:
+    "header header"
+    "menu content"
+    "footer footer"
+  }
+}
+
 .header{
   grid-area: header;
   width: 1200px;
