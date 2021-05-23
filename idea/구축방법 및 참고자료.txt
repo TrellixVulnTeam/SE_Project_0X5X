@@ -1,0 +1,24 @@
+1. git pull해서 전부 다운받기
+2. mysql workbench/ server 다운
+
+
+터미널창 이용해서  restraunt_v2 까지 들어가고
+
+3.명령어 입력
+npm i express 
+npm i -D nodemon  (두개 설치 근데 아마 되있을거임)
+npx sequelize init (시퀄라이즈 초기화)
+
+4. mysql 키기 
+5. config 폴더 들어가서 config.json 파일 수정 (develoment 부분만 건들면됌)
+6. npm  start  입력
+
+
+<참고>
+restraunt.js 서버 파일
+views => html 파일
+routes => route 파일
+res => resource(ex.img,png,...) 파일
+public => css javascript 파일
+models=> DB 파일 
+config => configuration (인증정보들어감)
