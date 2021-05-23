@@ -1,0 +1,253 @@
+
+a{
+  text-decoration: none;
+  display: block;
+
+}
+ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+
+body{
+  background-image: url(background.jpg);
+  background-repeat: no-repeat;
+}
+.slider{
+    width: 900px;
+    height: 410px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slider input[type=radio]{
+    display: none;
+}
+
+ul.imgs{
+    padding: 0;
+    margin: 0;
+}
+ul.imgs li{
+    position: absolute;
+    left: 640px;
+    transition-delay: 1s;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bullets{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    z-index: 2;
+}
+.bullets label{
+    display: inline-block;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.55);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.slider input[type=radio]:nth-child(1):checked~.bullets>label:nth-child(1){
+    background-color: #fff;
+}
+.slider input[type=radio]:nth-child(2):checked~.bullets>label:nth-child(2){
+    background-color: #fff;
+}
+.slider input[type=radio]:nth-child(3):checked~.bullets>label:nth-child(3){
+    background-color: #fff;
+}
+.slider input[type=radio]:nth-child(4):checked~.bullets>label:nth-child(4){
+    background-color: #fff;
+}
+
+.slider input[type=radio]:nth-child(1):checked~ul.imgs>li:nth-child(1){
+    left: 0;
+    transition: 0.5s;
+    z-index:1;
+}
+.slider input[type=radio]:nth-child(2):checked~ul.imgs>li:nth-child(2){
+    left: 0;
+    transition: 0.5s;
+    z-index:1;
+}
+.slider input[type=radio]:nth-child(3):checked~ul.imgs>li:nth-child(3){
+    left: 0;
+    transition: 0.5s;
+    z-index:1;
+}
+.slider input[type=radio]:nth-child(4):checked~ul.imgs>li:nth-child(4){
+    left: 0;
+    transition: 0.5s;
+    z-index:1;
+}
+
+
+
+.container{
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  grid-template-rows: 100px 1fr 100px;
+  height: 600px;
+  width: 1200px;
+  margin-right: 10px;
+  grid-gap:20px;
+  border: 1px solid black;
+  grid-template-areas:
+  "header header"
+  "menu content"
+  "footer footer"
+
+}
+.header{
+  grid-area: header;
+  width: 1200px;
+}
+
+.menu{
+  grid-area: menu;
+  height: 410px;
+}
+
+.content{
+  grid-area: content;
+  border:1px solid black;
+  width: 900px;
+  height: 410px;
+}
+.footer{
+  grid-area: footer;
+  height: 50px;
+  position: relative;
+}
+.login{
+  position: absolute;
+  right:0px;;
+}
+.menu>ul{
+  line-height: 50px;
+  text-align: center;
+}
+
+
+.menu>ul>li {
+  transition: all .3s ease
+}
+
+.menu>ul>li:hover {
+  color: #39d9c8;
+  transition: all .3s ease
+}
+
+.menu>ul>li>a {
+  position: relative
+}
+.menu>ul>li>a::after {
+  content: '';
+  width: 0%;
+  left: 50%;
+  height: 1px;
+  display: block;
+  position: absolute;
+  margin-top: 3px;
+  border-bottom: 2px solid white;
+  transition:all .3s ease;
+}
+.menu>ul>li:hover > a::after {
+  content: '';
+  width: 100%;
+  left: 0px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  margin-top: 3px;
+  border-bottom: 2px solid white;
+  transition:all .3s ease;
+}
+
+.menu>ul>li:hover{
+  background-color: rgba(0, 0, 0, 0.089);
+}
+.footer>ul{display:flex; right:30px; width: 170px;}
+.footer>ul>li{flex: 1;}
+
+form>fieldset{
+  display: inline;
+}
+
+.event_item{
+  width:200px;
+  height: 250px;
+  border: 1px solid black;
+  margin: 20px;
+  border-radius: 4px;
+}
+.event_page{
+  display: flex;
+  width: 900px;
+  height: 410px;
+  position: relative;
+}
+
+.next_page{
+  position: absolute;
+  left:410px;
+  bottom: 75px;
+}
+.event_item_title{
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: rgba(0,0,0,.03);
+  text-align: center;
+  height: 54px;
+  line-height: 54px;
+  border-bottom: 1px solid black;
+}
+
+.event_date{
+  padding: 20px;
+
+}
+
+.contact_page{
+  display: flex;
+  width: 900px;
+  height: 410px;
+}
+.info{
+  margin: 40px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+
+@media (min-width:1300px) {
+  .container{
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    height: 100%;
+    width: 100%;
+    margin-right: 10px;
+    grid-gap:20px;
+    border: 1px solid black;
+    grid-template-areas:
+    "header header"
+    "menu content"
+    "footer footer"
+  }
+}
+
+
+
+a:link {color: white;} /* 링크 방문전 : 오렌지*/
+a:visited {color:white;} /* 링크 방문후 : 파랑*/
+a:hover {color:white;} /* 링크 마우스 오버 : 빨강*/
+a:active {color:gray;} /* 링크 마우스 클릭 :검정*/
+
+header{padding: px;}
