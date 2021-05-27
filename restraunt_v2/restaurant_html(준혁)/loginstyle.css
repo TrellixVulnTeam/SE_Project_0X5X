@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
 
+
+
 a{
   text-decoration: none;
   display: block;
@@ -15,79 +17,6 @@ body{
   background-repeat: no-repeat;
   font-family: 'Nanum Myeongjo', sans-serif;
   color: white;
-}
-.slider{
-    width: 900px;
-    height: 410px;
-    position: relative;
-    margin: 0 auto;
-    overflow: hidden;
-}
-.slider input[type=radio]{
-    display: none;
-}
-
-ul.imgs{
-    padding: 0;
-    margin: 0;
-}
-ul.imgs li{
-    position: absolute;
-    left: 640px;
-    transition-delay: 1s;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.bullets{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 20px;
-    z-index: 2;
-}
-.bullets label{
-    display: inline-block;
-    border-radius: 50%;
-    background-color: rgba(0,0,0,0.55);
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-
-.slider input[type=radio]:nth-child(1):checked~.bullets>label:nth-child(1){
-    background-color: #fff;
-}
-.slider input[type=radio]:nth-child(2):checked~.bullets>label:nth-child(2){
-    background-color: #fff;
-}
-.slider input[type=radio]:nth-child(3):checked~.bullets>label:nth-child(3){
-    background-color: #fff;
-}
-.slider input[type=radio]:nth-child(4):checked~.bullets>label:nth-child(4){
-    background-color: #fff;
-}
-
-.slider input[type=radio]:nth-child(1):checked~ul.imgs>li:nth-child(1){
-    left: 0;
-    transition: 0.5s;
-    z-index:1;
-}
-.slider input[type=radio]:nth-child(2):checked~ul.imgs>li:nth-child(2){
-    left: 0;
-    transition: 0.5s;
-    z-index:1;
-}
-.slider input[type=radio]:nth-child(3):checked~ul.imgs>li:nth-child(3){
-    left: 0;
-    transition: 0.5s;
-    z-index:1;
-}
-.slider input[type=radio]:nth-child(4):checked~ul.imgs>li:nth-child(4){
-    left: 0;
-    transition: 0.5s;
-    z-index:1;
 }
 
 
@@ -254,3 +183,89 @@ a:hover {color:white;} /* 링크 마우스 오버 : 빨강*/
 a:active {color:gray;} /* 링크 마우스 클릭 :검정*/
 
 header{padding: px;}
+
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#login{
+  text-align: center;
+}
+.social_login {
+    width: 360px;
+    top: 50%;
+    left: 50%;
+    margin-left: 30%;
+
+}
+.login-main h1 {
+    margin: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 38px;
+    font-weight: normal;
+}
+.btn {
+    border-radius: 3px;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    font-size: 18px;
+    opacity: 0.9;
+}
+.btn:hover {
+    opacity: 1;
+}
+
+.btn:nth-of-type(1) {
+    background: #9ea0ac url(images/logo-email.png) no-repeat center left 15px;
+}
+.btn:nth-of-type(2) {
+    background: #3ed530 url(images/logo-naver.png) no-repeat center left 15px;
+}
+.btn:nth-of-type(3) {
+    background: #2f8efa url("images/icon_facebook.png") no-repeat center left 15px;
+}
+.btn:nth-of-type(4) {
+    background: #FFEB33 url(images/logo-line.png) no-repeat center left 14px;
+}
+.or-text {
+    display: block;
+    text-align: center;
+    /* margin-bottom: 7px; */
+    font-size: 15px;
+    margin: 10px 0;
+    position: relative;
+}
+.or-text::before,
+.or-text::after {
+     content: "";
+    position: absolute;
+    height: 1px;
+    background-color: lightgray;
+    width: 44%;
+    top: 10px;
+}
+.or-text::before {
+    left: 0;
+}
+.or-text::after {
+    right: 0;
+}
+.login-footer {
+    font-size: 15px;
+}
+.login-footer p {
+    text-align: center
+}
+.login-footer p a {
+    font-weight: normal;
+}
+.login-footer p a:hover {
+    text-decoration: underline;
+}
