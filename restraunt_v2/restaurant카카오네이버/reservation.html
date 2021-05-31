@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Resertvation System</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 style="padding-left:40px;">
+          <a href="index.html" style="">Restaurant</a><h1>
+      </div>
+      <div class="menu">
+         <ul>
+          <li><a href="menu.html">MENU</a></li>
+          <li><a href="reservation.html">RESERVATION</a></li>
+          <li><a href="event.html">EVENT</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+      <div class="content">
+        <h3>레스토랑 예약하기</h3>
+        <form method="get" action-"form_app.js">
+          <fieldset>
+            <legend>예약자 정보</legend>
+            <label for="sub">예약자:</label>
+            <input type="text" name="person" id="sub"/><br>
+            <label for="phone"> 휴대폰:</label>
+            <input type="tel" name="tel" id="phone" placeholder="010-0000-0000"/><br>
+            예약인원:
+            <select name="person" size="1">
+              <option value="1">1명</option>
+              <option value="2">2명</option>
+              <option value="3">3명</option>
+              <option value="4">4명</option>
+              <option value="5">5명</option>
+              <option value="6">6명</option>
+            </select>
+
+            <legend> 예약일자 선택</legend>
+            <input type="date" name="reservation_date"/>
+            <input type="time" name="reservation_time" min="09:00" max="20:00"/>
+          </fieldset>
+          <br>
+          <button type="button" onclick="location.href='seat.html'"> 다음 </button>
+          </form>
+      </div>
+      <div class="footer">
+        <ul class="login">
+          <li><a href="login.html">LOGIN</a></li>
+          <li><a href="a#">SIGN</a></li>
+        </ul>
+
+      </div>
+
+  </body>
+</html>
