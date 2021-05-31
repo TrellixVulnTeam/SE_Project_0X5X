@@ -5,19 +5,132 @@
     <meta name="viewport" content="width=device-width">
     <title>Resertvation System</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+      $(function(){
+
+      $("button").click(function(){
+        $(".modal").fadeIn();
+      });
+
+      $(".modal_content").click(function(){
+        $(".modal").fadeOut();
+      });
+
+    });
+    </script>
+    <style>
+    .center{
+      grid-area: content;
+      grid-template-rows: 1fr 1fr 30px;
+      grid-template-columns: 1fr 1fr;
+      width: 900px;
+      height: 410px;
+      display: grid;
+      position: relative;
+    }
+
+    .food{
+      width: 370;
+      height: 180;
+      margin-right:10%;
+      float:  left;
+      position: relative;
+      z-index:4
+    }
+    .food1{
+      width: 370;
+      height: 180;
+      margin-right:10%;
+      float:  right;
+      position: relative;
+      z-index:4;
+    }
+    .food2{
+      width: 370;
+      height: 180;
+      margin-right:10%;
+      float:  left;
+      position: relative;
+      z-index:4;
+    }
+    .food3{
+      width: 370;
+      height: 180;
+      margin-right:10%;
+      float:  right;
+      position: relative;
+      z-index:4;
+    }
+    .menu_next_page{
+      position: absolute;
+      left:410px;
+      bottom: 75px;
+      top:390px;
+    }
+    .modal {
+       display: none; /* Hidden by default */
+       position: fixed; /* Stay in place */
+       z-index: 1; /* Sit on top */
+       left: 0;
+       top: 0;
+       width: 100%; /* Full width */
+       height: 100%; /* Full height */
+       overflow: auto; /* Enable scroll if needed */
+       background-color: rgb(0,0,0); /* Fallback color */
+       background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+           /* Modal Content/Box */
+    .modal_content {
+       background-color: #fefefe;
+       margin: 15% auto; /* 15% from the top and centered */
+       padding: 20px;
+       border: 1px solid #888;
+       width: 50%; /* Could be more or less, depending on screen size */
+       color:black;
+   }
+
+           /* The Close Button */
+   .close {
+       color: #aaa;
+       float: right;
+       font-size: 28px;
+       font-weight: bold;
+   }
+   .close:hover,
+   .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+   }
+   .modal_button button{
+     border: 1px solid orange;
+     background-color: rgba(0,0,0,0);
+     color: orange;
+     padding:5px;
+
+   }
+   .modal_button button:hover{
+     color: white;
+     background-color: orange;
+
+   }
+
+   </style>
   </head>
   <body>
     <div class="container">
       <div class="header">
         <h1 style="padding-left:40px;">
-          <a href="index.html" style="">Restaurant</a><h1>
+          <a href="/index" style="">Restaurant</a><h1>
       </div>
       <div class="menu">
          <ul>
-          <li><a href="menu.html">MENU</a></li>
-          <li><a href="reservation.html">RESERVATION</a></li>
-          <li><a href="event.html">EVENT</a></li>
-          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="/menu_steak">MENU</a></li>
+          <li><a href="/reservation">RESERVATION</a></li>
+          <li><a href="/event">EVENT</a></li>
+          <li><a href="/contact">CONTACT</a></li>
         </ul>
       </div>
       <div class="event_page">
@@ -29,8 +142,17 @@
             2021.6.10~2021.6.30
           </div>
           <div class="event_detail">
-            내용들
+            내용 축약
+          </div>
+          <div class="modal_button">
+            <button class="img_btn"> 상세보기 </button>
+            <div class="modal">
+              <div class="modal_content">
+                <span class="close">&times;</span>
+                <p>여기에 음식 상세설명 이미지 추가1</p>
+              </div>
             </div>
+          </div>
         </div>
         <div class="event_item">
           <div class="event_item_title">
@@ -41,6 +163,15 @@
           </div>
           <div class="event_detail">
             내용들
+            </div>
+            <div class="modal_button">
+              <button class="img_btn"> 상세보기 </button>
+              <div class="modal">
+                <div class="modal_content">
+                  <span class="close">&times;</span>
+                  <p>여기에 음식 상세설명 이미지 추가2</p>
+                </div>
+              </div>
             </div>
         </div>
         <div class="event_item">
@@ -53,6 +184,15 @@
           <div class="event_detail">
             내용들
             </div>
+            <div class="modal_button">
+              <button class="img_btn"> 상세보기 </button>
+              <div class="modal">
+                <div class="modal_content">
+                  <span class="close">&times;</span>
+                  <p>여기에 음식 상세설명 이미지 추가3</p>
+                </div>
+              </div>
+            </div>
         </div>
         <div class="event_item">
           <div class="event_item_title">
@@ -64,16 +204,25 @@
           <div class="event_detail">
             내용들
             </div>
+            <div class="modal_button">
+              <button class="img_btn"> 상세보기 </button>
+              <div class="modal">
+                <div class="modal_content">
+                  <span class="close">&times;</span>
+                  <p>여기에 음식 상세설명 이미지 추가4</p>
+                </div>
+              </div>
+            </div>
         </div>
         <div class="next_page">
-          <button type="button" onclick="location.href='event_3.html'"> 이전 </button>
-          <button type="button" onclick="location.href='event_2.html'"> 다음 </button>
+          <button type="button" onclick="location.href='event3.html'"> 이전 </button>
+          <button type="button" onclick="location.href='event2.html'"> 다음 </button>
         </div>
       </div>
 
       <div class="footer">
         <ul class="login">
-          <li><a href="login.html">LOGIN</a></li>
+          <li><a href="/로그인">LOGIN</a></li>
           <li><a href="a#">SIGN</a></li>
         </ul>
 

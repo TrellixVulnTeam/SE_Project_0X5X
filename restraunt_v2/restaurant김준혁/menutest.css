@@ -191,7 +191,6 @@ form>fieldset{
   border-radius: 4px;
 }
 .event_page{
-  display: flex;
   width: 900px;
   height: 410px;
   position: relative;
@@ -254,3 +253,54 @@ a:hover {color:white;} /* 링크 마우스 오버 : 빨강*/
 a:active {color:gray;} /* 링크 마우스 클릭 :검정*/
 
 header{padding: px;}
+
+.caption a {
+    color: white;
+    text-decoration: none;
+    background-color: orange;
+    padding: 7px;
+    border-radius:3px;
+}
+.caption a:hover {
+    background-color: white;
+    color: black;
+}
+.items{
+    /* border: 1px solid black; */
+    text-align: center;
+}
+.item{
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    margin: 10px;
+}
+.caption{
+    width: 250px;
+    height: 250px;
+    background-color: rgba(0, 0, 0, 0.589);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    padding-top: 20px;
+    opacity:0;
+    transition: 0.5s;
+}
+.item:hover .caption{
+    opacity: 1;
+}
+.sub_menu {
+  display: flex;
+  padding-left: 50px;
+  padding-bottom: 25px;
+}
+.sub_menu a{
+  margin-right: 20px;
+}
+.sub_menu a:hover{
+  color: black;
+}
