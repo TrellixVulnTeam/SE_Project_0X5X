@@ -5,7 +5,8 @@
     <title>로그인</title>
     <meta name="viewport" content="width=device-width">
 
-    <link href="login.css" rel="stylesheet" type="text/css"/>
+    <link href="loginstyle.css" rel="stylesheet" type="text/css"/>
+
   </head>
   <body>
     <div class="container">
@@ -15,43 +16,47 @@
       </div>
       <div class="menu">
         <ul>
-          <li><a href="/menu">MENU</a></li>
+          <li><a href="/menu_steak">MENU</a></li>
           <li><a href="/reservation">RESERVATION</a></li>
           <li><a href="/event">EVENT</a></li>
           <li><a href="/contact">CONTACT</a></li>
         </ul>
       </div>
       <div class="content" id="login">
-        <div id="LOGIN">
-          <h1 id="Lh1">LOGIN</h1>
-        </div>
-        <!-- <div id="IDPWD"> -->
-          <div id="ID">
-            <input type="text" id="id" value="아이디">
-          </div>
-          <div id="PWD">
-            <input type="password" id="pwd" value="password">
-          </div>
-          <div id="LOGINBUTTON">
-            <button id="Loginbtn">로그인</button>
-          </div>
-        <!-- </div> -->
-
-        <div id="JOIN">
-          <a href="/signup" value="회원가입" id="jion">회원가입</a>
-        </div>
-        <div id="SOCIALLOGIN">
-          <a href="https://www.facebook.com/" target="_blank"><img src="icon_facebook.png" alt="위의 이미지를 누르면 연결됩니다." width=40 height=40></a>
-          <a href="https://instagram.com" target="_blank"><img src="icon_instagram.png" alt="위의 이미지를 누르면 연결됩니다." width=40 height=40></a>
-          <a href="https://twitter.com" target="_blank"><img src="icon_twitter.png" alt="위의 이미지를 누르면 연결됩니다." width=40 height=40></a>
-        </div>
+            <div class="social_login">
+              <form id="login-form" action="/auth/login" method="POST">
+                <div class="login-main">
+                    <h1>로그인</h1>
+                    <div class="int-area">
+                      <input type="text" name="email" id="id" autocomplete="off" required placeholder="USER ID" >
+                    </div>
+                    <div class="int-area">
+                      <input type="password" name="password" id="pwd" autocomplete="off" required placeholder="PASSWORD" >
+                    </div>
+                    <div class="btn-area">
+                      <button class="btn_login" type ="submit" id="login"> 로그인 </button>
+                    </div>
+                    <a href="/auth/naver" id="naver" class="btn">네이버로 로그인</a>
+                    <a href="/auth/facebook" id="facebook" class="btn">페이스북으로 로그인</a>
+                    <a href="/auth/kakao" id="kakao" class="btn">카카오톡으로 로그인</a>
+                </div>
+              </form>
+                <div class="login-footer">
+                        <a href="/join">회원가입</a>
+                </div>
+            </div>
       </div>
       <div class="footer">
-        <!-- <ul>
-          <li><a href="#a">LOGIN</a></li>
-          <li><a href="a#">SIGN</a></li>
-        </ul> -->
       </div>
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      window.onload = () =>{
+        if(new URL(location.href).searchParams.get('loginError')){
+          alert(new URL(location.href).searchParams.get('loginError'));
+        }
+      }
+    </script>
   </body>
 </html>
+
