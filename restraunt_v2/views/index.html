@@ -14,7 +14,7 @@
       </div>
       <div class="menu">
          <ul>
-          <li><a href="/menu">MENU</a></li>
+          <li><a href="/menu_steak">MENU</a></li>
           <li><a href="/reservation">RESERVATION</a></li>
           <li><a href="/event">EVENT</a></li>
           <li><a href="/contact">CONTACT</a></li>
@@ -41,11 +41,16 @@
           </div>
         </div>
       <div class="footer">
-        <ul class="login">
-          <li><a href="/login">LOGIN</a></li>
-          <li><a href="a#">SIGN</a></li>
-        </ul>
-
+        {% if user.is_authenticated %}
+          {{user.id}}
+             <ul class="logout">
+               <li><a href="/auth/logout" id="logout" >LOGOUT</a></li>
+            </ul>
+        {%else%}
+          <ul class="login" style="width:115px">
+           <a href="/login">LOGIN</a>
+          </ul>
+        {%endif%}
       </div>
 
   </body>

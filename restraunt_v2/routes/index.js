@@ -1,4 +1,5 @@
 const express = require('express');
+const {isLoggedIn, isNotLoggedIn} = require('./middlewares');
 
 const router = express.Router();
 
@@ -38,14 +39,31 @@ router.get('/login', function(req, res) {
   res.render('login', {
   });
 });
-router.get('/reservation', function(req, res) {
+router.get('/reservation', isLoggedIn, function(req, res) {
   res.render('reservation', {
   });
 });
-router.get('/seat', function(req, res) {
+router.get('/seat', isLoggedIn,  function(req, res) {
   res.render('seat', {
   });
 });
+router.get('/menu_dessert', function(req, res) {
+  res.render('menu_dessert', {
+  });
+});
+router.get('/menu_steak', function(req, res) {
+  res.render('menu_steak', {
+  });
+});
+router.get('/menu_pasta', function(req, res) {
+  res.render('menu_pasta', {
+  });
+});
+router.get('/join', function(req, res) {
+  res.render('join', {
+  });
+});
+
 
 
 module.exports = router;
