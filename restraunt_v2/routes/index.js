@@ -1,7 +1,12 @@
 const express = require('express');
 const {isLoggedIn, isNotLoggedIn} = require('./middlewares');
-
+const { Post, User } = require('../models');
 const router = express.Router();
+
+router.use((req, res, next) => {
+  res.locals.user = req.user;
+  next();
+});
 
 router.get('/', function(req, res) {
   res.render('index', {

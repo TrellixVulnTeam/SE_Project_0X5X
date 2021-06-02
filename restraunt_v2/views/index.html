@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
     <title>Resertvation System</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
@@ -41,17 +42,19 @@
           </div>
         </div>
       <div class="footer">
-        {% if user.is_authenticated %}
-          {{user.id}}
-             <ul class="logout">
-               <li><a href="/auth/logout" id="logout" >LOGOUT</a></li>
-            </ul>
-        {%else%}
-          <ul class="login">
-           <li><a href="/login">LOGIN</a></li>
-          </ul>
-        {%endif%}
+        {% if user %}
+            <a href="/auth/logout" id="logout" class="login">LOGOUT</a>  
+        {% else %}
+            <a href="/login" class="login">LOGIN</a>
+        {% endif %}
       </div>
-
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script>
+        window.onload = () => {
+          if (new URL(location.href).searchParams.get('loginError')) {
+            alert(new URL(location.href).searchParams.get('loginError'));
+          }
+        };
+      </script>
   </body>
 </html>

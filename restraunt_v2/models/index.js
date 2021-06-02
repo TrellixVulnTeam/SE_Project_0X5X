@@ -13,7 +13,7 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
 
 db.sequelize = sequelize;
 db.User = User;
-db.Food = Food;
+db.Food = Food; 
 db.Booking = Booking;
 db.Restaurant = Restaurant;
 
