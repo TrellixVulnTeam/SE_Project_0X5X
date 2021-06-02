@@ -60,12 +60,20 @@
         </div>
       </div>
       <div class="footer">
-        <ul class="login" style="width:115px">
-          <a href="/login">LOGIN</a>
-        </ul>
-
+        {% if user %}
+            <a href="/auth/logout" id="logout" class="login" style="width:115px">LOGOUT</a>  
+        {% else %}
+            <a href="/login" class="login"  style="width:115px">LOGIN</a>
+        {% endif %}
       </div>
-
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script>
+        window.onload = () => {
+          if (new URL(location.href).searchParams.get('loginError')) {
+            alert(new URL(location.href).searchParams.get('loginError'));
+          }
+        };
+      </script>
 
 
 
