@@ -6,7 +6,9 @@ const nunjucks = require('nunjucks');
 const passport = require('passport');
 const session = require('express-session');
 const dotenv = require('dotenv');
+const cons = require('consolidate')
 const { sequelize } = require('./models');
+
 
 dotenv.config();
 const indexRouter = require('./routes/');
@@ -17,7 +19,10 @@ passportConfig();
 
 
 app.set('port', process.env.PORT || 3305);
-app.set('view engine', 'html');
+
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+
 nunjucks.configure('views', {
   express: app,
   watch: true,
