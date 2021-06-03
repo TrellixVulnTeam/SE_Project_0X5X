@@ -6,7 +6,7 @@ const User = require('../models/user');
 
 const router = express.Router();
 
-router.post('/join', isNotLoggedIn, async (req, res, next) => {
+router.post('/join', isNotLoggedIn, async ( req, res, next) => {
   const {email,password, name, phoneNumber} = req.body;
   try {
     const exUser = await User.findOne({ where: { email } });
@@ -60,6 +60,7 @@ router.get('/kakao/callback', passport.authenticate('kakao', {
 }), (req, res) => {
   res.redirect('/');
 });
+
 
 router.get('/naver',passport.authenticate('naver',null),
 function(req, res) { 
