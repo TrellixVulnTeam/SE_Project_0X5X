@@ -1,6 +1,7 @@
 const express = require('express');
 const {isLoggedIn, isNotLoggedIn} = require('./middlewares');
-const { Post, User } = require('../models');
+const { Food, User, Booking, Restaurant } = require('../models');
+const { findAll } = require('../models/user');
 const router = express.Router();
 
 router.use((req, res, next) => {
@@ -51,9 +52,45 @@ router.get('/join', function(req, res) {
   res.render('join.html', {
   });
 });
+router.get('/manager', function(req, res) {
+  res.render('manager.html', {
+  });
+});
+router.get('/statistic', function(req, res) {
+  res.render('statistic.html', {
+  });
+});
+router.get('/customer_info', function(req, res) {
+  res.render('customer_info.html', {
+  });
+});
 
 
+router.post('/manager', (req, res) => {
+  console.log(req.body.code);
+  if(req.body.code === 'se_project'){
+    console.log('성공');
+    return res.redirect('/manager');
+  }
+  else{
+    res.send('<script>alert("인증코드 불일치");location.href="/";</script>');
+}
+});
 
-
+/*
+router.get('/test',async( req,res,next)  => {
+  try {
+    const user = await User.findOne({where : {provider : 'local'}});
+    console.log(user.id);
+    res.render('test.ejs', {
+      title: 'test',
+      user,
+    });
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+*/
 
 module.exports = router;
