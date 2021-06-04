@@ -302,6 +302,47 @@ a {
   border:none;
   font-family: 'Nanum Myeongjo', sans-serif;
 }
+
+
+.btn_login{
+  display: block;
+  width: 360px;
+  height: 50px;
+  margin-bottom: 10px;
+  background: #999 url(images/logo-email.png) no-repeat center left 15px;
+  border-radius: 3px;
+  text-align: center;
+  margin-bottom: 10px;
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  font-size: 18px;
+  opacity: 0.9;
+  border:none;
+  font-family: 'Nanum Myeongjo', sans-serif;
+}
 .btn_login:hover {
     opacity: 1;
+}
+.text-manager-login{
+  font-family: 'Nanum Myeongjo', sans-serif;
+  text-align: center;
+  margin-top: 20px;
+  color:black;
+  font-size: 30px;
+}
+.area-manager-login{
+  font-family: 'Nanum Myeongjo', sans-serif;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  height: 30px;
+  font-size: 20px;
+}
+.btn-manger-login{
+  font-family: 'Nanum Myeongjo', sans-serif;
+  width: 100px;
+  height: 30px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  background: rgb(223, 221, 221) url(images/logo-email.png) no-repeat center left 15px;;
 }

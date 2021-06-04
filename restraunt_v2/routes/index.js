@@ -1,6 +1,7 @@
 const express = require('express');
 const {isLoggedIn, isNotLoggedIn} = require('./middlewares');
-const { Post, User } = require('../models');
+const { Food, User, Booking, Restaurant } = require('../models');
+const { findAll } = require('../models/user');
 const router = express.Router();
 
 router.use((req, res, next) => {
@@ -8,67 +9,88 @@ router.use((req, res, next) => {
   next();
 });
 
-router.get('/', function(req, res) {
-  res.render('index', {
+router.get('/', function(req, res, next) {
+  res.render('index.html');
+});
+router.get('/contact', function(req, res, next) {
+  res.render('contact.html', {
   });
 });
-router.get('/menu', function(req, res) {
-  res.render('menu', {
+router.get('/event', function(req, res, next) {
+  res.render('event.html', {
   });
 });
-router.get('/menu_2', function(req, res) {
-  res.render('menu_2', {
+router.get('/contact', function(req, res, next) {
+  res.render('contact.html', {
   });
 });
-router.get('/contact', function(req, res) {
-  res.render('contact', {
+router.get('/login', function(req, res, next) {
+  res.render('login.html', {
   });
 });
-router.get('/event', function(req, res) {
-  res.render('event', {
+router.get('/reservation', isLoggedIn, function(req, res, next) {
+  res.render('reservation.html', {
   });
 });
-router.get('/event_2', function(req, res) {
-  res.render('event_2', {
+router.get('/seat', isLoggedIn,  function(req, res, next) {
+  res.render('seat.html', {
   });
 });
-router.get('/event_3', function(req, res) {
-  res.render('event_3', {
-  });
-});
-router.get('/contact', function(req, res) {
-  res.render('contact', {
-  });
-});
-router.get('/login', function(req, res) {
-  res.render('login', {
-  });
-});
-router.get('/reservation', isLoggedIn, function(req, res) {
-  res.render('reservation', {
-  });
-});
-router.get('/seat', isLoggedIn,  function(req, res) {
-  res.render('seat', {
-  });
-});
-router.get('/menu_dessert', function(req, res) {
-  res.render('menu_dessert', {
+router.get('/menu_dessert', function(req, res, next) {
+  res.render('menu_dessert.html', {
   });
 });
 router.get('/menu_steak', function(req, res) {
-  res.render('menu_steak', {
+  res.render('menu_steak.html', {
   });
 });
 router.get('/menu_pasta', function(req, res) {
-  res.render('menu_pasta', {
+  res.render('menu_pasta.html', {
   });
 });
 router.get('/join', function(req, res) {
-  res.render('join', {
+  res.render('join.html', {
+  });
+});
+router.get('/manager', function(req, res) {
+  res.render('manager.html', {
+  });
+});
+router.get('/statistic', function(req, res) {
+  res.render('statistic.html', {
+  });
+});
+router.get('/customer_info', function(req, res) {
+  res.render('customer_info.html', {
   });
 });
 
 
+router.post('/manager', (req, res) => {
+  console.log(req.body.code);
+  if(req.body.code === 'se_project'){
+    console.log('성공');
+    return res.redirect('/manager');
+  }
+  else{
+    res.send('<script>alert("인증코드 불일치");location.href="/";</script>');
+}
+});
+
+/*
+router.get('/test',async( req,res,next)  => {
+  try {
+    const user = await User.findOne({where : {provider : 'local'}});
+    console.log(user.id);
+    res.render('test.ejs', {
+      title: 'test',
+      user,
+    });
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+*/
 
 module.exports = router;

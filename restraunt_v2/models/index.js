@@ -23,4 +23,5 @@ Booking.init(sequelize);
 Restaurant.init(sequelize);
 
 
+
 module.exports = db;
