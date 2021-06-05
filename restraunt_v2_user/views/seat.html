@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Resertvation System</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+    <script type="text/javascript">
+    $(function(){
+
+      $('#T1').on('click', function() {
+      $('.seat').removeClass('enableclick');
+      $('#T1').addClass('enableclick');
+      });
+
+      $('#T2').on('click', function() {
+      $('.seat').removeClass('enableclick');
+      $('#T2').addClass('enableclick');
+      });
+
+      $('#T3').on('click', function() {
+      $('.seat').removeClass('enableclick');
+      $('#T3').addClass('enableclick');
+      });
+
+      $('#T4').on('click', function() {
+      $('.seat').removeClass('enableclick');
+      $('#T4').addClass('enableclick');
+      });
+
+      $('#T5').on('click', function() {
+      $('.seat').removeClass('enableclick');
+      $('#T5').addClass('enableclick');
+      });
+
+      $('#T6').on('click', function() {
+      $('.seat').removeClass('enableclick');
+      $('#T6').addClass('enableclick');
+      });
+
+      $('#T7').on('click', function() {
+      $('.seat').removeClass('enableclick');
+      $('#T7').addClass('enableclick');
+      });
+
+      $('#T8').on('click', function() {
+      $('.seat').removeClass('enableclick');
+      $('#T8').addClass('enableclick');
+      });
+
+      $('#T9').on('click', function() {
+      $('.seat').removeClass('enableclick');
+      $('#T9').addClass('enableclick');
+      });
+
+    });
+      $('#seatCancel').removeClass('enableclick');
+    </script>
+    <script type="text/javascript">
+      function getParam(sname) {
+        var params = location.search.substr(location.search.indexOf("?") + 1);
+        var sval = "";
+        params = params.split("&");
+        for (var i = 0; i < params.length; i++) {
+          temp = params[i].split("=");
+          if ([temp[0]] == sname) { sval = temp[1]; }
+        }
+        return sval;
+      }
+
+      // function post_to_url(path, params, method) {
+      //     method = method || "post";
+      //     var form = document.createElement("form");
+      //     form.setAttribute("method", method);
+      //     form.setAttribute("action", path);
+      //     for(var key in params) {
+      //         var hiddenField = document.createElement("input");
+      //         hiddenField.setAttribute("type", "hidden");
+      //         hiddenField.setAttribute("name", key);
+      //         hiddenField.setAttribute("value", params[key]);
+      //         form.appendChild(hiddenField);
+      //     }
+      //     document.body.appendChild(form);
+
+      //     form.submit();
+      //   }
+        // var tableiii = document.getElementsByClassName("enableclick").getAttribute( 'tableNum' );
+      
+        var nameii = decodeURIComponent(getParam("name"));
+        var coverii = getParam("person");
+        var dateii = getParam("reservation_date");
+        var timeii = getParam("reservation_time");
+
+      function clickEvent(divObj) {
+        // alert(divObj.id + '');
+        var tableii = divObj.getAttribute( 'tableNum' )
+        if (confirm(divObj.id + '번 테이블을 예약하시겠습니까?')) {
+          alert('인원: ' + coverii);
+          alert('예약 날짜: ' + dateii);
+          alert('예약 시간 : ' + timeii);
+          alert('테이블 번호: ' + tableii);
+          alert('예약자 명: ' + nameii);
+          // post_to_url('/auth/booking', {'table' : 'tableii', 'date' : 'dateii', 'time' : 'timeii', 'cover' : 'coverii', 'name' : 'null'});
+        }
+      }
+
+    </script>
+    <style>
+      .line {
+          margin-left: 30px;
+          overflow: hidden;
+      }
+
+      .seat {
+        
+          margin: 2px;
+          float: left;
+          width: 60px;
+          height: 60px;
+          border-radius: 3px;
+          text-align: center;
+          font-size: 24px;
+      }
+
+      .enable {
+          border-color: aliceblue;
+          border : 2px solid ;
+          background: rgb(70, 70, 70);
+      }
+
+      .enable:hover {
+          background: rgb(128, 37, 1);
+      }
+      
+      .enableclick{
+        background: rgb(235, 228, 225);
+        color: black;
+      }
+
+      .disable {
+          background: red;
+      }
+  </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 style="padding-left:40px;">
+          <a href="/" style="">Restaurant</a><h1>
+      </div>
+      <div class="menu">
+         <ul>
+          <li><a href="/menu_steak">MENU</a></li>
+          <li><a href="/reservation">RESERVATION</a></li>
+          <li><a href="/event">EVENT</a></li>
+          <li><a href="/contact">CONTACT</a></li>
+        </ul>
+      </div>
+      <form id="seat-form" action="/booking" method="POST">
+      <div class="content">
+        <div style = "text-align: center; font-size : 24px; margin-bottom: 10px;" >자리선택하기</div>
+        <div class="line">
+          <div class="seat" ></div>
+          <div class="seat" ></div>
+          <div class="seat" ></div>
+          <div class="seat enable" onclick="javascript:clickEvent(this)" id="T1" tableNum = "1">1</div>
+          <div class="seat" ></div>
+          <div class="seat" ></div>
+          <div class="seat enable" onclick="javascript:clickEvent(this)" id="T2" tableNum = "2">2</div>
+          <div class="seat" ></div>
+          <div class="seat" ></div>
+          <div class="seat enable" onclick="javascript:clickEvent(this)" id="T3" tableNum = "3">3</div>
+          <div class="seat" ></div>
+          <div class="seat" ></div>
+        </div>
+        <div class="line">
+          <div class="seat" ></div>
+        </div>
+        <div class="line">
+          <div class="seat" ></div>
+          <div class="seat" ></div>
+          <div class="seat" ></div>
+          <div class="seat enable" onclick="javascript:clickEvent(this)" id="T4" tableNum = "4">4</div>
+          <div class="seat" ></div>
+          <div class="seat" ></div>
+          <div class="seat enable" onclick="javascript:clickEvent(this)" id="T5" tableNum = "5">5</div>
+          <div class="seat" ></div>
+          <div class="seat" ></div>
+          <div class="seat enable" onclick="javascript:clickEvent(this)" id="T6" tableNum = "6">6</div>
+          <div class="seat" ></div>
+          <div class="seat" ></div>
+        </div>
+        <div class="line">
+          <div class="seat" ></div>
+        </div>
+        <div class="line">
+          <div class="seat" ></div>
+          <div class="seat" ></div>
+          <div class="seat" ></div>
+          <div class="seat enable" onclick="javascript:clickEvent(this)" id="T7" tableNum = "7">7</div>
+          <div class="seat" ></div>
+          <div class="seat" ></div>
+          <div class="seat enable" onclick="javascript:clickEvent(this)" id="T8" tableNum = "8">8</div>
+          <div class="seat" ></div>
+          <div class="seat" ></div>
+          <div class="seat enable" onclick="javascript:clickEvent(this)" id="T9" tableNum = "9">9</div>
+          <div class="seat" ></div>
+          <div class="seat" ></div>
+        </div>
+        <div>
+          <input type="hidden" name="table" value="${tableii};">
+          <input type="hidden" name="date" value="${dateii};">
+          <input type="hidden" name="time" value="${timeii};">
+          <input type="hidden" name="cover" value="${coverii};">
+          <input type="hidden" name="name" value="${nameii};">
+          <input type="hidden" name="name" value="{{user.name}}">
+        </div>
+        <div style="margin-top: 7px; text-align: center;">
+          <button type="submit"  style="margin-right: 22px;">예약하기</button>
+          <button type="" id="seatCancel" onclick="location.href='/reservation'" formaction=  "action2.html" formmethod="post" formtarget="_self" style="margin-left: 22px;">취소</button>
+        </div>
+      </div>
+      </form>
+      
+      <script>
+        document.write('<form action="/booking" id="smb_form" method="post"><input type="hidden" id="test" name="test" value="'+ nameii +'"></form>');
+   </script>
+    
+      <div class="footer">
+        {% if user %}
+            <a href="/auth/logout" id="logout" class="login" style="width:115px">LOGOUT</a>  
+        {% else %}
+            <a href="/login" class="login"  style="width:115px">LOGIN</a>
+        {% endif %}
+      </div>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script>
+        window.onload = () => {
+          if (new URL(location.href).searchParams.get('loginError')) {
+            alert(new URL(location.href).searchParams.get('loginError'));
+          }
+        };
+      </script>
+  </body>
+</html>
