@@ -1,6 +1,6 @@
 {
-  "name": "gocoder",
-  "version": "0.0.0",
+  "name": "restaurant",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
