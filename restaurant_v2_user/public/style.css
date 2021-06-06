@@ -9,7 +9,6 @@ ul{
   list-style-type: none;
   padding-left: 0;
 }
-
 body{
   background-image: url(background.jpg);
   background-repeat: no-repeat;
@@ -26,7 +25,6 @@ body{
 .slider input[type=radio]{
     display: none;
 }
-
 ul.imgs{
     padding: 0;
     margin: 0;
@@ -105,7 +103,7 @@ ul.imgs li{
   "header header"
   "menu content"
   "footer footer"
-
+  "reserve reserve"
 }
 .header{
   grid-area: header;
@@ -116,7 +114,6 @@ ul.imgs li{
   grid-area: menu;
   height: 410px;
 }
-
 .content{
   grid-area: content;
   border:1px solid black;

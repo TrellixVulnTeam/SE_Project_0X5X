@@ -1,72 +1,101 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Resertvation System</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <h1 style="padding-left:40px;">
-          <a href="/" style="">Restaurant</a><h1>
-      </div>
-      <div class="menu">
-         <ul>
-          <li><a href="/menu_steak">MENU</a></li>
-          <li><a href="/reservation">RESERVATION</a></li>
-          <li><a href="/event">EVENT</a></li>
-          <li><a href="/contact">CONTACT</a></li>
-        </ul>
-      </div>
-      <div class="content">
-        <h3>레스토랑 예약하기</h3>
-        <form method="get" action="/seat">
-          <fieldset>
-            <legend>예약자 정보</legend>
-            예약인원:
-            <select name="person" size="1">
-              <option value="1">1명</option>
-              <option value="2">2명</option>
-              <option value="3">3명</option>
-              <option value="4">4명</option>
-              <option value="5">5명</option>
-              <option value="6">6명</option>
-            </select>
 
-            <legend> 예약일자 선택</legend>
-            <input type="date" name="reservation_date"/>
-            <input type="hidden" name="name" value="{{user.name}}">
-            <select name="reservation_time" size="1">
-              <option value="9">09:00~11:00</option>
-              <option value="11">11:00~13:00</option>
-              <option value="13">13:00~15:00</option>
-              <option value="14">15:00~17:00</option>
-              <option value="17">17:00~19:00</option>
-              <option value="19">19:00~21:00</option>
-              <option value="21">21:00~23:00</option>
-            </select>
-          </fieldset>
-          <br>
-          <button type="submit" onclick="location.href='seat.html'"> 다음 </button>
-          </form>
-      </div>
-      <div class="footer">
-        {% if user %}
-            <a href="/auth/logout" id="logout" class="login" style="width:115px">LOGOUT</a>  
-        {% else %}
-            <a href="/login" class="login"  style="width:115px">LOGIN</a>
-        {% endif %}
-      </div>
-      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-      <script>
-        window.onload = () => {
-          if (new URL(location.href).searchParams.get('loginError')) {
-            alert(new URL(location.href).searchParams.get('loginError'));
-          }
-        };
-      </script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Resertvation System</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<style>
+  .button {
+    box-shadow: inset 0px 1px 0px -50px #a6827e;
+    background: linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+    background-color: hsl(31, 26%, 55%);
+    border-radius: 22px;
+    border: 0;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 14px;
+    padding: 13px 26px;
+    text-decoration: none;
+    text-shadow: 1px 1px 50px #4d3534;
+    opacity: 0.9;
+    margin-left: 20%
+  }
 
-  </body>
+  .fieldsetstyle {
+    margin-bottom: 50px;
+    text-align: center;
+    width: 70%;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 style="padding-left:40px;">
+        <a href="/" style="">Restaurant</a>
+        <h1>
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="/menu_steak">MENU</a></li>
+        <li><a href="/reservation">RESERVATION</a></li>
+        <li><a href="/event">EVENT</a></li>
+        <li><a href="/contact">CONTACT</a></li>
+      </ul>
+    </div>
+    <div class="content" style="text-align: center; height: 450px;">
+      <h3>레스토랑 예약하기</h3>
+      <form class="dform" method="get" action="/seat">
+        <fieldset class="fieldsetstyle" style="height:300px">
+          <legend>예약자 정보</legend>
+          예약인원 :
+          <select style="margin-right: 300px;margin-top: 20px;" name="person" size="1">
+            <option value="1">1명</option>
+            <option value="2">2명</option>
+            <option value="3">3명</option>
+            <option value="4">4명</option>
+            <option value="5">5명</option>
+            <option value="6">6명</option>
+          </select>
+          <legend style="margin-right: 325px; margin-top:50px;">예약일자 선택</legend>
+          <input style="margin: right0;" type="date" name="reservation_date" />
+          <button class="button" type="submit" onclick="location.href='seat.html'"> 자리 선택 하자</button>
+          <input type="hidden" name="name" value="{{user.name}}">
+          <legend style="margin-right: 325px;margin-top:40px;"> 예약시간 선택</legend>
+          <select style="margin-right: 320px;margin-top:10px" name="reservation_time" size="1">
+            <option value="9">09:00~11:00</option>
+            <option value="11">11:00~13:00</option>
+            <option value="13">13:00~15:00</option>
+            <option value="15">15:00~17:00</option>
+            <option value="17">17:00~19:00</option>
+            <option value="19">19:00~21:00</option>
+            <option value="21">21:00~23:00</option>
+          </select>
+        </fieldset>
+
+      </form>
+    </div>
+    <div class="footer">
+      {% if user %}
+      <a href="/auth/logout" id="logout" class="login" style="width:115px">LOGOUT</a>
+      {% else %}
+      <a href="/login" class="login" style="width:115px">LOGIN</a>
+      {% endif %}
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      window.onload = () => {
+        if (new URL(location.href).searchParams.get('loginError')) {
+          alert(new URL(location.href).searchParams.get('loginError'));
+        }
+      };
+    </script>
+
+</body>
+
 </html>

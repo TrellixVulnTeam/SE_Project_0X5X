@@ -10,20 +10,21 @@ module.exports = class Booking extends Sequelize.Model{
             },
             date: {
                 type: Sequelize.DATE,
-                allowNull: true,
-            },
-            reserve_time: {
-                type: Sequelize.INTEGER,
-                allowNull: true,
+                allowNull: false,
             },
             cover: {
                 type: Sequelize.INTEGER,
-                allowNull: true,
+                allowNull: false,
             },
             name: {
                 type: Sequelize.STRING,
-                allowNull: true,
+                allowNull: false,
             },
+            //time
+            reserve_time: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+            }
         },{
             sequelize,
             timestamps:true,
